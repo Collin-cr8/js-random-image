@@ -20,3 +20,13 @@ const selectRandomImage = function (images) {
 }
 
 //Display Image
+const displayImage = function (randomImage) {
+    const author = randomImage.author;
+    const imageAddress = randomImage.download_url;
+
+    authorSpan.innerText = author;
+    img.src = imageAddress;
+
+    imgDiv.classList.remove(hide);
+    displayImage(randomImage);
+}
