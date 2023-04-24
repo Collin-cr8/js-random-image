@@ -10,14 +10,16 @@ const getImage = async function () {
     selectRandomImage(images);
 };
 
-getImage();
+
 
 const selectRandomImage = function (images) {
     const randomIndex = Math.floor(Math.random() * images.length);
     //console.log(randomIndex);
     const randomImage = images[randomIndex];
     //console.log(randomImage);
-}
+    displayImage(randomImage);
+
+};
 
 //Display Image
 const displayImage = function (randomImage) {
@@ -27,6 +29,10 @@ const displayImage = function (randomImage) {
     authorSpan.innerText = author;
     img.src = imageAddress;
 
-    imgDiv.classList.remove(hide);
-    displayImage(randomImage);
-}
+    imgDiv.classList.remove("hide");
+};
+
+//Add click event 
+button.addEventListener("click", function() {
+    getImage();
+});
